@@ -3,6 +3,7 @@
 ## Project Setup
 
 - Install dependencies by running `npm i` at the project root
+- Install `json-server` by running `npm install -g json-server`
 - Use the command `json-server --watch db.json --port 3002` to run the `json-server`
 - Use the command `npm start` to start the project
   Runs the app in the development mode.
@@ -72,9 +73,10 @@ const BlogContextProvider = ({ children }) => {
 };
 ```
 
-5. Give the `BlogContext.Provider` a value assigned to the blogPosts array
-6. Export `BlogContext` and `BlogContextProvider`
-7. Create a **custom hook** called `useBlogContext` to use the `BlogContext`
+5. Return the `BlogContext.Provider` element and pass it **children**
+6. Give the `BlogContext.Provider` a value assigned to the blogPosts array
+7. Export `BlogContext` and `BlogContextProvider`
+8. Create a **custom hook** called `useBlogContext` to use the `BlogContext`
 
 **`BlogContext.js` FINAL CODE**
 
@@ -120,32 +122,3 @@ const useBlogContext = () => {
 
 export { BlogContext, BlogContextProvider, useBlogContext };
 ```
-
-8. Import `BlogContextProfider` to `App.js` and wrap the components you want to have access to the **blog posts**
-
-```js
-import { BlogContextProvider } from "./contexts/blog/BlogContext";
-...
-function App() {
-  return (
-    <>
-      <NavBar />
-      <BlogContextProvider>
-        <CardsContainer />
-      </BlogContextProvider>
-    </>
-  );
-}
-```
-
-9. Erase the fetch logic inside `CardsContainer.jsx`
-
-10. Import the `useBlogContext` Hook to `CardsContainer.jsx`
-
-```js
-import { useBlogContext } from "../../contexts/blog/BlogContext";
-```
-
-## `UserContext.js` Instructions/Script
-
-1.
