@@ -10,7 +10,7 @@ const BlogCard = ({ blogPost }) => {
           User Number {userId}
         </Card.Subtitle>
         <Card.Text>{toSentenceCase(body)}</Card.Text>
-        <Button variant="primary">"Add to Favs"</Button>
+        <Button variant="primary">Add to Favs</Button>
       </Card.Body>
     </Card>
   );
