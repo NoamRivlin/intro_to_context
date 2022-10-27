@@ -9,3 +9,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+.blog-card {
+  width: 18rem;
+  margin: 5px;
+}
